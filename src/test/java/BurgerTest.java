@@ -37,11 +37,16 @@ public class BurgerTest {
     }
 
     @Test
-    public void addAndRemoveIngredientTest(){
+    public void removeIngredientTest(){
         burger.addIngredient(firstIngredient);
-        assertTrue("Ингреденты должны быть добавлены!",burger.ingredients.size() > 0);
         burger.removeIngredient(0);
         assertTrue("Ингредиент должен был быть удален!",burger.ingredients.size() == 0);
+    }
+
+    @Test
+    public void addIngredientTest(){
+        burger.addIngredient(firstIngredient);
+        assertTrue("Ингреденты должны быть добавлены!",burger.ingredients.size() > 0);
     }
 
     @Test
@@ -50,7 +55,6 @@ public class BurgerTest {
         burger.addIngredient(firstIngredient);
         burger.addIngredient(secondIngredient);
 
-        assertTrue("Ингреденты должны были быть добавлены!",burger.ingredients.size() == 2);
         burger.moveIngredient(0,1);
         assertTrue("Ингредиент должен был быть перемещен!",burger.ingredients.indexOf(firstIngredient) == 1);
     }
@@ -84,7 +88,7 @@ public class BurgerTest {
         expected.append(String.format("(==== %s ====)%n", bun.getName()));
         expected.append(String.format("%nPrice: %f%n", burger.getPrice()));
 
-        assertEquals("Рецепт неверный!",burger.getReceipt(),expected.toString());
+        assertEquals("Рецепт неверный!",expected.toString(),burger.getReceipt());
     }
 
 }

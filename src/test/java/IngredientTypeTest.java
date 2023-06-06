@@ -24,7 +24,7 @@ public class IngredientTypeTest {
     }
 
     @Test
-    public void  PresenceIngredientTest(){
+    public void  presenceIngredientTest(){
         assertThat(type.valueOf(type), is(notNullValue()));
     }
 

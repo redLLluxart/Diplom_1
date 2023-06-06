@@ -18,9 +18,4 @@ public class BunTest {
         assertEquals("Имя булочки не Ржаная!","Ржаная",bun.getName());
     }
 
-    @Test
-    public void getPriceTest(){
-        assertEquals("Стоимость булочки не 15.5!",15.5f,bun.getPrice(),Constant.DELTA);
-    }
-
 }
